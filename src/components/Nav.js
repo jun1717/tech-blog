@@ -1,10 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
+/** @jsx jsx */
+import { jsx, css } from "@emotion/core"
 
 import "./nav.css"
 
 const Nav = () => (
-  <nav className="nav">
+  <nav
+    css={{
+      padding: "24px",
+    }}
+  >
     <ul className="nav-list">
       <li className="nav-list-item">
         <Link activeStyle={{ borderBottom: "2px solid #a64ac9" }} to="/">
