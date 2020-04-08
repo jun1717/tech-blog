@@ -3,36 +3,45 @@ import { Link } from "gatsby"
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core"
 
-import "./nav.css"
+const headerTitle = css({
+  color: "#4A4A4A",
+  fontWeight: "bold",
+  fontSize: "40px",
+  lineHeight: "65px",
+})
+
+const linkStyle = {
+  position: "absolute",
+  top: "24px",
+  right: "112px",
+  textDecoration: "none",
+}
+
+const linkText = css`
+  color: #4a4a4a;
+  font-weight: bold;
+  font-size: 24px;
+`
 
 const Nav = () => (
   <nav
     css={{
-      padding: "24px",
+      backgroundColor: "#FEBF0F",
+      padding: "35px 0px",
     }}
   >
-    <ul className="nav-list">
-      <li className="nav-list-item">
-        <Link activeStyle={{ borderBottom: "2px solid #a64ac9" }} to="/">
-          Home
-        </Link>
-      </li>
-      <li className="nav-list-item">
-        <Link activeStyle={{ borderBottom: "2px solid #a64ac9" }} to="/about">
-          About
-        </Link>
-      </li>
-      <li className="nav-list-item">
-        <Link activeStyle={{ borderBottom: "2px solid #a64ac9" }} to="/blog">
-          Blog
-        </Link>
-      </li>
-      <li className="nav-list-item">
-        <Link activeStyle={{ borderBottom: "2px solid #a64ac9" }} to="/contact">
-          Contact
-        </Link>
-      </li>
-    </ul>
+    <div
+      css={css`
+        width: 330px;
+        height: 65px;
+        margin: 0 auto;
+      `}
+    >
+      <span css={headerTitle}>TECH MEMO</span>
+    </div>
+    <Link to="/about" style={linkStyle}>
+      <span css={linkText}>ABOUT</span>
+    </Link>
   </nav>
 )
 
